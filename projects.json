@@ -1,0 +1,23 @@
+{ "projects": [{
+    "name": "Fund My Dog",
+    "summary": "My dog needs a toy. Fund him!",
+    "neededFund": 50,
+    "currentFund": 10,
+    "rewards": "A picture of my darling little Precious.",
+    "id": "1"
+    }, {
+    "name": "Fund my Car",
+    "summary": "I want a nicer stereo system. Give me money.",
+    "neededFund": 1000,
+    "currentFund": 200,
+    "rewards": "Me driving up and down outside your house at 3am.",
+    "id": "2"
+      }, {
+    "name": "Fund my House",
+    "summary": "I want a new house. Fund me!",
+    "neededFund": 5000,
+    "currentFund": 2000,
+    "rewards": "One night in the guest bedroom.",
+    "id": "3"
+  }]
+}
