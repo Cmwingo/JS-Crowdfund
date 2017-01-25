@@ -28,4 +28,8 @@ export class ProjectService {
                                     neededFund: project.neededFund,
                                     rewards: project.rewards});
   }
+  deleteProject(localProjectToDelete){
+  var projectEntryInFirebase = this.getProjectById(localProjectToDelete.$key);
+  projectEntryInFirebase.remove();
+}
 }

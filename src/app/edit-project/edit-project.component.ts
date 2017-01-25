@@ -19,4 +19,10 @@ export class EditProjectComponent implements OnInit {
   editProject(project) {
     this.projectService.updateProject(project);
   }
+
+  beginDeletingProject(projectToDelete) {
+    if(confirm("Are you sure you want to delete this project from the list?")){
+  this.projectService.deleteProject(projectToDelete);
+  }
+}
 }
