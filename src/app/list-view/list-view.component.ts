@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { ProjectService } from '../project.service';
 import { Router } from '@angular/router';
 import { Project } from '../project.model';
@@ -22,7 +22,7 @@ export class ListViewComponent implements OnInit {
 
   }
 
-  goToDetailView(clickedProject: Project) {
-    // this.router.navigate(['projects', clickedProject.$key]);
+  goToDetailView(clickedProject) {
+    this.router.navigate(['projects', clickedProject.$key]);
   };
 }

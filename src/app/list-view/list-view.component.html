@@ -3,6 +3,7 @@
 <div *ngFor="let project of projects | async" (click)="goToDetailView(project)" class="panel panel-default">
   <div class="panel-body">
     <h3><em>{{project.name}}</em> | {{project.summary}}</h3>
+    <h1>{{project.$key}}</h1>
   </div>
 </div>
 
