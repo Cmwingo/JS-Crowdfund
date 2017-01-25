@@ -1,3 +1,5 @@
-<p>
-  detail-view works!
-</p>
+<div>
+  <h3>{{(projectToDisplay | async)?.name}}</h3>
+  <h4>{{(projectToDisplay | async)?.summary}}</h4>
+  <p>{{(projectToDisplay | async)?.neededFunding}}</p>
+</div>

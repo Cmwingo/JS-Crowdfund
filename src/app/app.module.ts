@@ -10,6 +10,7 @@ import { NewProjectComponent } from './new-project/new-project.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { routing } from './app.routing';
+import { AdminComponent } from './admin/admin.component';
 
 
 export const firebaseConfig = {
@@ -24,7 +25,8 @@ export const firebaseConfig = {
     AppComponent,
     ListViewComponent,
     DetailViewComponent,
-    NewProjectComponent
+    NewProjectComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
