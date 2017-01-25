@@ -1,9 +1,11 @@
 <h2>Master List</h2>
 
-<div *ngFor="let project of projects | async" (click)="goToDetailView(project)" class="panel panel-default">
+<div *ngFor="let project of projects | async" class="panel panel-default">
   <div class="panel-body">
-    <h3><em>{{project.name}}</em> | {{project.summary}}</h3>
+    <h3 (click)="goToDetailView(project)"><em>{{project.name}}</em> | {{project.summary}}</h3>
     <h1>{{project.$key}}</h1>
+    <hr>
+    <app-edit-project [selectedProject]="project"></app-edit-project>
   </div>
 </div>
 

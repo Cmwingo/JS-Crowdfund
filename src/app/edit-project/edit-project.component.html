@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3>Edit Project</h3>
+  </div>
+<div class="panel-body">
+  <div>
+    <label>Project Name:</label>
+    <br>
+    <input [(ngModel)]="selectedProject.name">
+  </div>
+  <div>
+    <label>Project Summary:</label>
+    <br>
+    <input [(ngModel)]="selectedProject.summary">
+  </div>
+  <div>
+    <label>Project Needed Funding:</label>
+    <br>
+    <textarea [(ngModel)]="selectedProject.neededFund"></textarea>
+  </div>
+  <div>
+    <label>Project Rewards:</label>
+    <br>
+    <textarea [(ngModel)]="selectedProject.rewards"></textarea>
+  </div>
+  <button class="btn btn-success" (click)="editProject(selectedProject)">Edit Project</button>
+</div>
+</div>

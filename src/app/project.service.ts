@@ -21,4 +21,11 @@ export class ProjectService {
     return this.angularFire.database.object('projects/' + projectId);
   }
 
+  updateProject(project) {
+    var projectEntryInFirebase = this.getProjectById(project.$key);
+    projectEntryInFirebase.update({name: project.name,
+                                    summary: project.summary,
+                                    neededFund: project.neededFund,
+                                    rewards: project.rewards});
+  }
 }
