@@ -12,6 +12,7 @@ import { AngularFireModule } from 'angularfire2';
 import { routing } from './app.routing';
 import { AdminComponent } from './admin/admin.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
+import { CompletenessPipe } from './completeness.pipe';
 
 
 export const firebaseConfig = {
@@ -28,7 +29,8 @@ export const firebaseConfig = {
     DetailViewComponent,
     NewProjectComponent,
     AdminComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    CompletenessPipe
   ],
   imports: [
     BrowserModule,

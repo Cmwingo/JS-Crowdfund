@@ -1,5 +1,8 @@
 <div>
-  <h3>{{(projectToDisplay | async)?.name}}</h3>
+  <h1>Detail of Project for Funding: {{(projectToDisplay | async)?.name}}</h1>
   <h4>{{(projectToDisplay | async)?.summary}}</h4>
-  <p>{{(projectToDisplay | async)?.neededFunding}}</p>
+  <p>Goal Funding: {{(projectToDisplay | async)?.goalFund}}</p>
+  <p>Current Funds: {{(projectToDisplay | async)?.currentFund}}<p>
+  <p>Needed Funds: {{(projectToDisplay | async)?.neededFund}}</p>
+  <p>Rewards: {{(projectToDisplay | async)?.rewards}}</p>
 </div>

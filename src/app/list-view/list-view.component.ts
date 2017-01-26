@@ -14,15 +14,26 @@ import { Project } from '../project.model';
 })
 export class ListViewComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
+  filterByCompleteness: string = "allProjects";
+  neededFund;
 
   constructor(private router: Router, private projectService: ProjectService) { }
 
   ngOnInit() {
     this.projects = this.projectService.getProjects();
-
   }
 
+  onChange(optionFromMenu) {
+  this.filterByCompleteness = optionFromMenu;
+}
+
   goToDetailView(clickedProject) {
+    clickedProject.neededFund = clickedProject.goalFund - clickedProject.currentFund;
+    this.projectService.updateProject(clickedProject);
     this.router.navigate(['projects', clickedProject.$key]);
   };
+
+  calculateNeededFund(passedProject) {
+    this.neededFund = passedProject.goalFund - passedProject.currentFund;
+  }
 }
