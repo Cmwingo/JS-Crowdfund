@@ -10,6 +10,8 @@ import { ProjectService } from '../project.service';
 })
 export class EditProjectComponent implements OnInit {
   @Input() selectedProject;
+  toggleEdit: boolean = false;
+
 
   constructor(private projectService: ProjectService) { }
 
@@ -25,4 +27,12 @@ export class EditProjectComponent implements OnInit {
   this.projectService.deleteProject(projectToDelete);
   }
 }
+  toggleEditPanel(clickedEditHeading) {
+    if(this.toggleEdit == true) {
+      this.toggleEdit = false;
+    } else {
+      this.toggleEdit = true;
+    }
+}
+
 }
