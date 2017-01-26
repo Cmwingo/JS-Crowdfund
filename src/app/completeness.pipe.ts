@@ -11,14 +11,13 @@ export class CompletenessPipe implements PipeTransform {
   transform(input: Project[], desiredCompleteness) {
     var output: Project[] = [];
 
-    if (input==null) {
-      return input;
-    } else if(desiredCompleteness === "closeProjects") {
-      for (var i = 0; i < input.length; i++) {
-        if (input[i].goalFund < 1500) {
-          output.push(input[i]);
+    if (input!==null) {
+      if(desiredCompleteness === "closeProjects") {
+        for (var i = 0; i < input.length; i++) {
+          if (input[i].goalFund < 1500) {
+            output.push(input[i]);
+          }
         }
-      }
       return output;
     } else if (desiredCompleteness === "farProjects") {
       for (var i = 0; i < input.length; i++) {
@@ -29,6 +28,9 @@ export class CompletenessPipe implements PipeTransform {
       return output;
     } else {
       return input;
+    }
+  } else {
+    return input;
     }
   }
 }

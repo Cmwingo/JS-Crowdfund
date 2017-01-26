@@ -1,12 +1,12 @@
 <h2>Master Project List</h2>
+<select (change)="onChange($event.target.value)">
+  <option value="allProjects" selected="selected">All Projects</option>
+  <option value="closeProjects">Projects Needing Less than $1500</option>
+  <option value="farProjects">Projects Needing More than $1500</option>
+</select>
 
-<div *ngFor="let project of projects | async | completeness" class="panel panel-default">
+<div *ngFor="let project of projects | async | completeness:filterByCompleteness" class="panel panel-default">
   <div class="panel-body">
-    <select (change)="onChange($event.target.value)">
-      <option value="allProjects" selected="selected">All Projects</option>
-      <option value="closeProjects">Projects Needing Less than $500</option>
-      <option value="farProjects">Projects Needing More than $500</option>
-    </select>
     <h3 (click)="goToDetailView(project)"><em>{{project.name}}</em> | {{project.summary}}</h3>
     <app-edit-project [selectedProject]="project"></app-edit-project>
   </div>
