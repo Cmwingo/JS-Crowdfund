@@ -16,6 +16,7 @@ export class ListViewComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
   filterByCompleteness: string = "allProjects";
   neededFund;
+  routeFinder: string = this.router.url;
 
   constructor(private router: Router, private projectService: ProjectService) { }
 
@@ -31,9 +32,11 @@ export class ListViewComponent implements OnInit {
     clickedProject.neededFund = clickedProject.goalFund - clickedProject.currentFund;
     this.projectService.updateProject(clickedProject);
     this.router.navigate(['projects', clickedProject.$key]);
-  };
+  }
 
   calculateNeededFund(passedProject) {
     this.neededFund = passedProject.goalFund - passedProject.currentFund;
   }
+
+
 }

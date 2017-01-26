@@ -13,6 +13,7 @@ import { routing } from './app.routing';
 import { AdminComponent } from './admin/admin.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
 import { CompletenessPipe } from './completeness.pipe';
+import { FundProjectComponent } from './fund-project/fund-project.component';
 
 
 export const firebaseConfig = {
@@ -30,7 +31,8 @@ export const firebaseConfig = {
     NewProjectComponent,
     AdminComponent,
     EditProjectComponent,
-    CompletenessPipe
+    CompletenessPipe,
+    FundProjectComponent
   ],
   imports: [
     BrowserModule,
