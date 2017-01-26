@@ -1,1 +1,28 @@
-
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3>Add New Project to Funding List</h3>
+  </div>
+<div class="panel-body">
+  <div>
+    <label>Project Name:</label>
+    <br>
+    <input #newName>
+  </div>
+  <div>
+    <label>Project Summary:</label>
+    <br>
+    <input #newSummary>
+  </div>
+  <div>
+    <label>Project Needed Funding:</label>
+    <br>
+    <textarea #newNeededFund></textarea>
+  </div>
+  <div>
+    <label>Project Rewards:</label>
+    <br>
+    <textarea #newRewards></textarea>
+  </div>
+  <button class="btn btn-success" (click)="submitForm(newName.value, newSummary.value, newNeededFund.value, newRewards.value)">Add Project</button>
+</div>
+</div>

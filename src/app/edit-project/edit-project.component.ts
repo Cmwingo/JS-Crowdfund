@@ -18,8 +18,8 @@ export class EditProjectComponent implements OnInit {
   ngOnInit() {
   }
 
-  editProject(project) {
-    this.projectService.updateProject(project);
+  editProject(selectedProject) {
+    this.projectService.updateProject(selectedProject);
   }
 
   beginDeletingProject(projectToDelete) {

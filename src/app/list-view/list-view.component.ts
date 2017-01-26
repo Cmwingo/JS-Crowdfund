@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { ProjectService } from '../project.service';
 import { Router } from '@angular/router';
@@ -17,6 +17,7 @@ export class ListViewComponent implements OnInit {
   filterByCompleteness: string = "allProjects";
   neededFund;
   routeFinder: string = this.router.url;
+  userAddProject: boolean = false;
 
   constructor(private router: Router, private projectService: ProjectService) { }
 
@@ -38,5 +39,17 @@ export class ListViewComponent implements OnInit {
     this.neededFund = passedProject.goalFund - passedProject.currentFund;
   }
 
+  userMakeNewProject() {
+    if(this.userAddProject == true) {
+      this.userAddProject = false;
+    } else {
+      this.userAddProject = true;
+    }
+}
+
+  newToggle(newToggleFromChild) {
+    console.log(newToggleFromChild);
+    this.userAddProject = newToggleFromChild;
+  }
 
 }

@@ -5,9 +5,9 @@
 <div *ngIf="toggleFund == true" class="panel-body">
     <label>Project Needed Funding:</label>
     <br>
-    <h4>{{(selectedProject | async)?.neededFund}}</h4>
+    <h4>{{(projectToFund | async)?.neededFund}}</h4>
     <label>I Want to Give This Amount:</label>
     <br>
-    <input #projectDonation>
-  <button class="btn btn-success" (click)="fundProject(selectedProject)">Fund Project</button>
+    <input #fundAmount>
+  <button class="btn btn-success" (click)="fundProject(project, fundAmount.value)">Fund Project</button>
 </div>

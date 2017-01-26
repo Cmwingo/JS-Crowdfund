@@ -5,12 +5,14 @@
   <option value="farProjects">Projects Needing More than $1500</option>
 </select>
 
+<button class="btn btn-success" (click)="userMakeNewProject()">User Make New Project</button>
+<app-new-project *ngIf="userAddProject === true" (toggleNewFormEmitter)="userMakeNewProject()"></app-new-project>
+
+
 <div *ngFor="let project of projects | async | completeness:filterByCompleteness" class="panel panel-default">
   <div class="panel-body">
     <h3 (click)="goToDetailView(project)"><em>{{project.name}}</em> | {{project.summary}}</h3>
-    <app-edit-project *ngIf="routeFinder === '/admin'"> "[selectedProject]="project"></app-edit-project>
-    <app-fund-project *ngIf="routeFinder != '/admin'"></app-fund-project>
+    <app-edit-project *ngIf="routeFinder === '/admin'" [selectedProject]="project"></app-edit-project>
+    <app-fund-project *ngIf="routeFinder != '/admin'" [projectToFund]="projectToFund"></app-fund-project>
   </div>
 </div>
-
-<app-new-project></app-new-project>
